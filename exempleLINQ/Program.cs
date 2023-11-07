@@ -497,6 +497,7 @@ using System.Collections;
 //Console.WriteLine("Student ID: {0}, Student Name: {1}", studentWithLongName.StudentID, studentWithLongName.StudentName); 
 #endregion
 #endregion
+#region Sum
 #region Sum simple
 //IList<int> intList = new List<int>() { 10, 21, 30, 45, 50, 87 };
 
@@ -515,26 +516,166 @@ using System.Collections;
 //Console.WriteLine("Sum of Even Elements: {0}", sumOfEvenElements);
 #endregion
 #region Sum complex type collection
-IList<Student> studentList = new List<Student>() {
-        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
-        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
-        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
-        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
-        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
-    };
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+//    };
 
-var sumOfAge = studentList.Sum(s => s.Age);
+//var sumOfAge = studentList.Sum(s => s.Age);
 
-Console.WriteLine("Sum of all student's age: {0}", sumOfAge);
+//Console.WriteLine("Sum of all student's age: {0}", sumOfAge);
 
-var numOfAdults = studentList.Sum(s =>
-{
+//var numOfAdults = studentList.Sum(s =>
+//{
 
-    if (s.Age >= 18)
-        return 1;
-    else
-        return 0;
-});
+//    if (s.Age >= 18)
+//        return 1;
+//    else
+//        return 0;
+//});
 
-Console.WriteLine("Total Adult Students: {0}", numOfAdults); 
+//Console.WriteLine("Total Adult Students: {0}", numOfAdults);
+#endregion
+#endregion
+#region ElementAt & ElementAtOrDefault
+//IList<int> intList = new List<int>() { 10, 21, 30, 45, 50, 87 };
+//IList<string> strList = new List<string>() { "One", "Two", null, "Four", "Five" };
+
+//Console.WriteLine("1st Element in intList: {0}", intList.ElementAt(0));
+//Console.WriteLine("1st Element in strList: {0}", strList.ElementAt(0));
+
+//Console.WriteLine("2nd Element in intList: {0}", intList.ElementAt(1));
+//Console.WriteLine("2nd Element in strList: {0}", strList.ElementAt(1));
+
+//Console.WriteLine("3rd Element in intList: {0}", intList.ElementAtOrDefault(2));
+//Console.WriteLine("3rd Element in strList: {0}", strList.ElementAtOrDefault(2));
+
+//Console.WriteLine("10th Element in intList: {0} - default int value",
+//                intList.ElementAtOrDefault(9));
+//Console.WriteLine("10th Element in strList: {0} - default string value (null)",
+//                 strList.ElementAtOrDefault(9));
+#endregion
+#region First & FirstOrDefault
+#region First
+//IList<int> intList = new List<int>() { 3, 4, 7, 10, 21, 30, 45, 50, 87 };
+//IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+
+//Console.WriteLine("1st Element in intList: {0}", intList.First());
+//Console.WriteLine("1st Even Element in intList: {0}", intList.First(i => i % 2 == 0));
+
+//Console.WriteLine("1st Element in strList: {0}", strList.First()); 
+#endregion
+#region FirstOrDefault
+//IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+//IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+//IList<string> emptyList = new List<string>();
+
+//Console.WriteLine("1st Element in intList: {0}", intList.FirstOrDefault());
+//Console.WriteLine("1st Even Element in intList: {0}",
+//                                 intList.FirstOrDefault(i => i % 2 == 0));
+
+//Console.WriteLine("1st Element in strList: {0}", strList.FirstOrDefault());
+
+//Console.WriteLine("1st Element in emptyList: {0}", emptyList.FirstOrDefault()); 
+#endregion
+#endregion
+#region Last & LastOrDefault
+#region Last
+//IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+//IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+
+//Console.WriteLine("Last Element in intList: {0}", intList.Last());
+
+//Console.WriteLine("Last Even Element in intList: {0}", intList.Last(i => i % 2 == 0));
+
+//Console.WriteLine("Last Element in strList: {0}", strList.Last()); 
+#endregion
+#region LastOrDefault
+//List<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+//IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+//IList<string> emptyList = new List<string>();
+
+//Console.WriteLine("Last Element in intList: {0}", intList.LastOrDefault());
+
+//Console.WriteLine("Last Even Element in intList: {0}",
+//                                 intList.LastOrDefault(i => i % 2 == 0));
+
+//Console.WriteLine("Last Element in strList: {0}", strList.LastOrDefault());
+
+//Console.WriteLine("Last Element in emptyList: {0}", emptyList.LastOrDefault()); 
+#endregion
+#endregion
+#region Single & SingleOrDefault
+//IList<int> oneElementList = new List<int>() { 7 };
+//IList<int> intList = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+//IList<string> strList = new List<string>() { null, "Two", "Three", "Four", "Five" };
+//IList<string> emptyList = new List<string>();
+
+//Console.WriteLine("The only element in oneElementList: {0}", oneElementList.Single());
+//Console.WriteLine("The only element in oneElementList: {0}",
+//             oneElementList.SingleOrDefault());
+
+//Console.WriteLine("Element in emptyList: {0}", emptyList.SingleOrDefault());
+
+//Console.WriteLine("The only element which is less than 10 in intList: {0}",
+//             intList.Single(i => i < 10)); 
+#endregion
+#region SequenceEqual
+#region SequenceEqual primitive data type
+//IList<string> strList1 = new List<string>() { "One", "Two", "Three", "Four", "Three" };
+
+//IList<string> strList2 = new List<string>() { "One", "Two", "Three", "Four", "Three" };
+
+//bool isEqual = strList1.SequenceEqual(strList2); // returns true
+//Console.WriteLine(isEqual); 
+//IList<string> strList1 = new List<string>() { "One", "Two", "Three", "Four", "Three" };
+
+//IList<string> strList2 = new List<string>() { "Two", "One", "Three", "Four", "Three" };
+
+//bool isEqual = strList1.SequenceEqual(strList2); // returns false
+//Console.WriteLine(isEqual);
+#endregion
+#region SequenceEqual class without IComparable
+//Student std = new Student() { StudentID = 1, StudentName = "Bill" };
+
+//IList<Student> studentList1 = new List<Student>() { std };
+
+//IList<Student> studentList2 = new List<Student>() { std };
+
+//bool isEqual = studentList1.SequenceEqual(studentList2); // returns true
+//Console.WriteLine(isEqual);
+
+//Student std1 = new Student() { StudentID = 1, StudentName = "Bill" };
+//Student std2 = new Student() { StudentID = 1, StudentName = "Bill" };
+
+//IList<Student> studentList3 = new List<Student>() { std1 };
+
+//IList<Student> studentList4 = new List<Student>() { std2 };
+
+//isEqual = studentList3.SequenceEqual(studentList4);// returns false
+//Console.WriteLine(isEqual); 
+#endregion
+#region SequenceEqual class with IComparable
+//IList<Student> studentList1 = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+//        new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+//    };
+
+//IList<Student> studentList2 = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+//        new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+//    };
+//// following returns true
+//bool isEqual = studentList1.SequenceEqual(studentList2, new StudentComparer());
+//Console.WriteLine(isEqual); 
+#endregion
 #endregion
