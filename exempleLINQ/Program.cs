@@ -285,4 +285,123 @@ using System.Collections;
 //        Console.WriteLine(stud.StudentName);
 //} 
 #endregion
+#region Select
+#region Select simple
+//IList<Student> studentList = new List<Student>() {
+//    new Student() { StudentID = 1, StudentName = "John" },
+//    new Student() { StudentID = 2, StudentName = "Moin" },
+//    new Student() { StudentID = 3, StudentName = "Bill" },
+//    new Student() { StudentID = 4, StudentName = "Ram" },
+//    new Student() { StudentID = 5, StudentName = "Ron" }
+//};
+
+//var selectResult = from s in studentList
+//                   select s.StudentName;
+//foreach (var std in selectResult)
+//{
+//    Console.WriteLine(std);
+//} 
+#endregion
+#region Select plusieurs champs
+//IList<Student> studentList = new List<Student>() {
+//    new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//    new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+//    new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+//    new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+//    new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+//};
+
+//// returns collection of anonymous objects with Name and Age property
+//var selectResult = from s in studentList
+//                    select new { Name = "Mr. " + s.StudentName, Age = s.Age };
+//var selectResult = studentList.Select(s => new
+//{
+//    Name = s.StudentName,
+//    Age = s.Age
+//});
+
+//// iterate selectResult
+//foreach (var item in selectResult)
+//    Console.WriteLine("Student Name: {0}, Age: {1}", item.Name, item.Age); 
+#endregion
+#endregion
+#region ALL & ANY
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+//        new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+//    };
+
+//// checks whether all the students are teenagers    
+//bool areAllStudentsTeenAger = studentList.All(s => s.Age > 12 && s.Age < 20);
+
+//Console.WriteLine(areAllStudentsTeenAger);
+
+//bool isAnyStudentTeenAger = studentList.Any(s => s.Age > 12 && s.Age < 20);
+
+//Console.WriteLine(isAnyStudentTeenAger); 
+#endregion
+#region Contain
+#region Contains primitive data types
+//IList<int> intList = new List<int>() { 1, 2, 3, 4, 5 };
+//bool result = intList.Contains(10);  // returns false
+//Console.WriteLine(result); 
+#endregion
+#region Contain class
+////Il faut créé une class qui implémente IEqualityComparer<T> pour comparer les valeurs et non les references 
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+//        new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill",  Age = 25 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
+//    };
+
+//Student std = new Student() { StudentID = 3, StudentName = "Bill" };
+//bool result = studentList.Contains(std, new StudentComparer()); //returns true
+//Console.WriteLine(result); 
+#endregion
+#endregion
+#region Aggregate
+#region Aggregate simple
+//IList<String> strList = new List<String>() { "One", "Two", "Three", "Four", "Five" };
+
+//var commaSeperatedString = strList.Aggregate((s1, s2) => s1 + ", " + s2);
+
+//Console.WriteLine(commaSeperatedString); 
+#endregion
+#region Aggregate avec seed
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+//    };
+
+//string commaSeparatedStudentNames = studentList.Aggregate<Student, string>(
+//                                        "Student Names: ",  // seed value
+//                                        (str, s) => str += s.StudentName + ",");
+
+//Console.WriteLine(commaSeparatedStudentNames); 
+#endregion
+#region Aggregate avec Result Selector
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+//    };
+
+//string commaSeparatedStudentNames = studentList.Aggregate<Student, string, string>(
+//                                            String.Empty, // seed value
+//                                            (str, s) => str += s.StudentName + ",", // returns result using seed value, String.Empty goes to lambda expression as str
+//                                            str => str.Substring(0, str.Length - 1)); // result selector that removes last comma
+
+//Console.WriteLine(commaSeparatedStudentNames); 
+#endregion 
+#endregion
 
