@@ -679,3 +679,145 @@ using System.Collections;
 //Console.WriteLine(isEqual); 
 #endregion
 #endregion
+#region Concat
+//IList<string> collection1 = new List<string>() { "One", "Two", "Three" };
+//IList<string> collection2 = new List<string>() { "Five", "Six" };
+
+//var collection3 = collection1.Concat(collection2);
+
+//foreach (string str in collection3)
+//    Console.WriteLine(str);
+//IList<int> collection4 = new List<int>() { 1, 2, 3 };
+//IList<int> collection5 = new List<int>() { 4, 5, 6 };
+
+//var collection6 = collection4.Concat(collection5);
+
+//foreach (int i in collection6)
+//    Console.WriteLine(i); 
+#endregion
+#region DefaultIfEmpty
+//IList<string> emptyList = new List<string>();
+
+//var newList1 = emptyList.DefaultIfEmpty();
+//var newList2 = emptyList.DefaultIfEmpty("None");
+
+//Console.WriteLine("Count: {0}", newList1.Count());
+//Console.WriteLine("Value: {0}", newList1.ElementAt(0));
+
+//Console.WriteLine("Count: {0}", newList2.Count());
+//Console.WriteLine("Value: {0}", newList2.ElementAt(0)); 
+#endregion
+#region Empty & Range & Repeat
+#region Empty
+//var emptyCollection1 = Enumerable.Empty<string>();
+//var emptyCollection2 = Enumerable.Empty<Student>();
+
+//Console.WriteLine("Count: {0} ", emptyCollection1.Count());
+//Console.WriteLine("Type: {0} ", emptyCollection1.GetType().Name);
+
+//Console.WriteLine("Count: {0} ", emptyCollection2.Count());
+//Console.WriteLine("Type: {0} ", emptyCollection2.GetType().Name); 
+#endregion
+#region Range
+//var intCollection = Enumerable.Range(10, 10);
+//Console.WriteLine("Total Count: {0} ", intCollection.Count());
+
+//for (int i = 0; i < intCollection.Count(); i++)
+//    Console.WriteLine("Value at index {0} : {1}", i, intCollection.ElementAt(i)); 
+#endregion
+#region Repeat
+//var intCollection = Enumerable.Repeat<int>(10, 10);
+//Console.WriteLine("Total Count: {0} ", intCollection.Count());
+
+//for (int i = 0; i < intCollection.Count(); i++)
+//    Console.WriteLine("Value at index {0} : {1}", i, intCollection.ElementAt(i)); 
+#endregion
+#endregion
+#region Distinct
+//IList<string> strList = new List<string>() { "One", "Two", "Three", "Two", "Three" };
+
+//IList<int> intList = new List<int>() { 1, 2, 3, 2, 4, 4, 3, 5 };
+
+//var distinctList1 = strList.Distinct();
+
+//foreach (var str in distinctList1)
+//    Console.WriteLine(str);
+
+//var distinctList2 = intList.Distinct();
+
+//foreach (var i in distinctList2)
+//    Console.WriteLine(i); 
+#endregion
+#region Except
+//IList<string> strList1 = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+//IList<string> strList2 = new List<string>() { "Four", "Five", "Six", "Seven", "Eight" };
+
+//var result = strList1.Except(strList2);
+
+//foreach (string str in result)
+//    Console.WriteLine(str); 
+#endregion
+#region Intersect
+//IList<string> strList1 = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+//IList<string> strList2 = new List<string>() { "Four", "Five", "Six", "Seven", "Eight" };
+
+//var result = strList1.Intersect(strList2);
+
+//foreach (string str in result)
+//    Console.WriteLine(str); 
+#endregion
+#region Union
+//IList<string> strList1 = new List<string>() { "One", "Two", "three", "Four" };
+//IList<string> strList2 = new List<string>() { "Two", "THREE", "Four", "Five" };
+
+//var result = strList1.Union(strList2);
+
+//foreach (string str in result)
+//    Console.WriteLine(str); 
+#endregion
+#region Skip & SkipWhile
+#region Skip
+//IList<string> strList = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+
+//var newList = strList.Skip(2);
+
+//foreach (var str in newList)
+//    Console.WriteLine(str); 
+#endregion
+#region SkipWhile
+//IList<string> strList = new List<string>() {
+//                                            "One",
+//                                            "Two",
+//                                            "Three",
+//                                            "Four",
+//                                            "Five",
+//                                            "Six"  };
+
+//var resultList = strList.SkipWhile(s => s.Length < 4);
+
+//foreach (string str in resultList)
+//    Console.WriteLine(str); 
+#endregion
+#endregion
+#region Take & TakeWhile
+#region Take
+//IList<string> strList = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+
+//var newList = strList.Take(2);
+
+//foreach (var str in newList)
+//    Console.WriteLine(str); 
+#endregion
+#region TakeWhile
+//IList<string> strList = new List<string>() {
+//                                            "Three",
+//                                            "Four",
+//                                            "Five",
+//                                            "Hundred"  };
+
+//var result = strList.TakeWhile(s => s.Length > 4);
+
+//foreach (string str in result)
+//    Console.WriteLine(str); 
+#endregion 
+#endregion
