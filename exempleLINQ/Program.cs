@@ -402,6 +402,139 @@ using System.Collections;
 //                                            str => str.Substring(0, str.Length - 1)); // result selector that removes last comma
 
 //Console.WriteLine(commaSeparatedStudentNames); 
-#endregion 
 #endregion
+#endregion
+#region Average
+//IList<int> intList = new List<int>() { 10, 20, 30 };
 
+//var avg = intList.Average();
+
+//Console.WriteLine("Average: {0}", avg);
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+//    };
+
+//var avgAge = studentList.Average(s => s.Age);
+
+//Console.WriteLine("Average Age of Student: {0}", avgAge); 
+#endregion
+#region Count
+#region Count simple
+//IList<int> intList = new List<int>() { 10, 21, 30, 45, 50 };
+
+//var totalElements = intList.Count();
+
+//Console.WriteLine("Total Elements: {0}", totalElements);
+
+//var evenElements = intList.Count(i => i % 2 == 0);
+
+//Console.WriteLine("Even Elements: {0}", evenElements); 
+#endregion
+#region Count complex type collection
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Mathew", Age = 15 }
+//    };
+
+//var totalStudents = studentList.Count();
+
+//Console.WriteLine("Total Students: {0}", totalStudents);
+
+//var adultStudents = studentList.Count(s => s.Age >= 18);
+
+//Console.WriteLine("Number of Adult Students: {0}", adultStudents);
+#endregion
+#endregion
+#region Max
+#region Max simple
+//IList<int> intList = new List<int>() { 10, 21, 30, 45, 50, 87 };
+
+//var largest = intList.Max();
+
+//Console.WriteLine("Largest Element: {0}", largest);
+
+//var largestEvenElements = intList.Max(i => {
+//    if (i % 2 == 0)
+//        return i;
+
+//    return 0;
+//});
+
+//Console.WriteLine("Largest Even Element: {0}", largestEvenElements); 
+#endregion
+#region Max complex type collection
+//IList<Student> studentList = new List<Student>() {
+//        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+//    };
+
+//var oldest = studentList.Max(s => s.Age);
+
+//Console.WriteLine("Oldest Student Age: {0}", oldest); 
+#endregion
+#region Max student with more long name
+//// Student collection
+//IList<Student> studentList = new List<Student>() {
+//                new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+//                new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+//                new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+//                new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+//                new Student() { StudentID = 5, StudentName = "Steve", Age = 15 }
+//            };
+
+//var studentWithLongName = studentList.Max();
+
+//Console.WriteLine("Student ID: {0}, Student Name: {1}", studentWithLongName.StudentID, studentWithLongName.StudentName); 
+#endregion
+#endregion
+#region Sum simple
+//IList<int> intList = new List<int>() { 10, 21, 30, 45, 50, 87 };
+
+//var total = intList.Sum();
+
+//Console.WriteLine("Sum: {0}", total);
+
+//var sumOfEvenElements = intList.Sum(i =>
+//{
+//    if (i % 2 == 0)
+//        return i;
+
+//    return 0;
+//});
+
+//Console.WriteLine("Sum of Even Elements: {0}", sumOfEvenElements);
+#endregion
+#region Sum complex type collection
+IList<Student> studentList = new List<Student>() {
+        new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+        new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+        new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+        new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+        new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+    };
+
+var sumOfAge = studentList.Sum(s => s.Age);
+
+Console.WriteLine("Sum of all student's age: {0}", sumOfAge);
+
+var numOfAdults = studentList.Sum(s =>
+{
+
+    if (s.Age >= 18)
+        return 1;
+    else
+        return 0;
+});
+
+Console.WriteLine("Total Adult Students: {0}", numOfAdults); 
+#endregion
